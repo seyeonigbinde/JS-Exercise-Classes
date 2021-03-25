@@ -84,8 +84,8 @@ class Airplane {
     fill(gallons) {
     this.tank = this.tank + items;
     }
-    drive(gallons) {
-
+    drive(distance) {
+      return `I ran out of fuel at x miles!" x being ${odometer}`
     }
   }
   
@@ -157,8 +157,22 @@ class Airplane {
           + `PRAssignment` a method that receives a subject as an argument and returns `student.name has submitted a PR for {subject}`
           + `sprintChallenge` similar to PRAssignment but returns `student.name has begun sprint challenge on {subject}`
   */
- class Student {
-     
+ class Student extends Lambdasian{
+  constructor(attribute){
+    super(attribute)
+    this.previousBackground = attribute.previousBackground;
+    this.className = attribute.className;
+    this.favSubjects = attribute.favSubjects;
+  } 
+     listSubjects(){
+       return this.favSubjects;
+     }
+     PRAssignment(subject){
+       return `${this.name} has submitted a PR for ${subject}`
+     }
+     sprintChallenge(subject){
+     return `${this.name} has begun sprint challenge on  ${subject}`
+     }
  }
   
   /*
